@@ -24,7 +24,7 @@ var app = new Vue({
         getUsername: function(){
             fetch(TEST_URL, {
                 method: "GET",
-                mode: "no-cors",
+                mode: "cors",
                 headers: {
                     //"Content-Type": "application/json",
                     //"Content-Type": "application/x-www-form-urlencoded",
