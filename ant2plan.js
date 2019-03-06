@@ -1,7 +1,9 @@
 // A simple Vue app to display my antplanner schedule
-const TEST_URL = 'https://antplanner.appspot.com/schedule/load?username=areksoatW19'
-var GET_URL = 'https://antplanner.appspot.com/schedule/load?username='
-var myusername = 'areksoatW19'
+const TEST_URL = 'https://antplanner.appspot.com/schedule/load?username=areksoatW19';
+var GET_URL = 'https://antplanner.appspot.com/schedule/load?username=';
+var myusername = 'areksoatW19';
+const NODE_URL = 'localhost:3000/url';
+
 
 var xhr = new XMLHttpRequest();
 xhr.open("GET", TEST_URL, );
@@ -17,12 +19,16 @@ xhr.onreadystatechange = function(){
 var app = new Vue({
     el: '#app',
     data: {
-        username: 'placeholder'
+        username: 'placeholder',
+        schedule: [
+            'foo',
+            'bar'
+        ]
     },
 
     methods: {
         getUsername: function(){
-            fetch(TEST_URL, {
+            fetch(NODE_URL, {
                 method: "GET",
                 mode: "cors",
                 headers: {
@@ -36,6 +42,9 @@ var app = new Vue({
                 if(response.ok){
                     console.log("We OK");
                     console.log(response.json());
+
+                    console.log("PARSING...");
+                    this.schedule = JSON.parse(response.json());
                 }else{
                     console.log("We not ok?");
                     console.log(response.status);

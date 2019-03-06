@@ -6,6 +6,12 @@
     <p>{{ username }}</p>
     <input v-model="username">
     <button v-on:click="getUsername">Get Username</button>
+
+    <ol>
+        <li v-for="item in schedule">
+            {{ item }}
+        </li>
+    </ol>
 </div>
 
 <script src="ant2plan.js"></script>
