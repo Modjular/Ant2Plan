@@ -1,10 +1,13 @@
-// Mainly testing out the capabilities of 
+window.onload = function() {
 
-// Apparently Vue is a global variable
+    var app = new Vue({
+        el: '#app',
+        data: {
+            username: 'placeholder'
+        }
+    })
 
-var app = new Vue({
-    el: '#app',
-    data: {
-      message: 'Hello Vue!'
+    var getUsername = function(username){
+
     }
-})
+}
