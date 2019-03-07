@@ -18,7 +18,7 @@ app.listen(8080, () => {
 app.get("/url", (req, res, next) => {
 
     console.log("REQ RECEIVED:", req.query.username);
-    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Origin", "https://modjular.github.io");
     res.setHeader("Access-Control-Allow-Methods", "GET");
 
     try{
