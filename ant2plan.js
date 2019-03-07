@@ -3,6 +3,7 @@ const TEST_URL = 'https://antplanner.appspot.com/schedule/load?username=areksoat
 var GET_URL = 'https://antplanner.appspot.com/schedule/load?username=';
 var myusername = 'areksoatW19';
 const NODE_URL = 'localhost:3000/url';
+const HTTP_URL = 'http://127.0.0.1:8080/url';
 
 
 var xhr = new XMLHttpRequest();
@@ -28,13 +29,13 @@ var app = new Vue({
 
     methods: {
         getUsername: function(){
-            fetch(NODE_URL, {
+            fetch(HTTP_URL + "?username=" + myusername, {
                 method: "GET",
                 mode: "cors",
                 headers: {
-                    //"Content-Type": "application/json",
+                    "Content-Type": "application/json",
                     //"Content-Type": "application/x-www-form-urlencoded",
-                    "Content-Type": "text/plain"
+                    //"Content-Type": "text/plain"
                 },
                 credentials: "include"
             })
