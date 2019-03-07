@@ -3,7 +3,7 @@ const TEST_URL = 'https://antplanner.appspot.com/schedule/load?username=areksoat
 var GET_URL = 'https://antplanner.appspot.com/schedule/load?username=';
 var myusername = 'areksoatW19';
 const NODE_URL = 'localhost:3000/url';
-const HTTP_URL = 'http://127.0.0.1:8080/url';
+const HTTP_URL = 'http://192.168.169.7:8080';
 
 
 var xhr = new XMLHttpRequest();
